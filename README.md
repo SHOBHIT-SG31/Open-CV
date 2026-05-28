@@ -47,3 +47,6 @@ Make sure you have the following installed:
 ---
 
 ## ⚙️ Code Highlights
+- Background Capture: Uses median of multiple frames for a clean background.
+- Color Detection: HSV mask for dark blue range [100, 100, 50] → [130, 255, 255].
+- Final Output: Combines cloak area (background) + visible area (current frame).
