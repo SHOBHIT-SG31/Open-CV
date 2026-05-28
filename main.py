@@ -23,12 +23,11 @@ def get_mask_for_dark_blue(frame):
     """Dark blue color ke liye HSV mask"""
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
-    # Dark blue HSV range
+    # Dark blue 
     lower_blue = np.array([100, 100, 50])
     upper_blue = np.array([130, 255, 255])
     mask = cv2.inRange(hsv, lower_blue, upper_blue)
 
-    # Morphological operations for clean mask
     kernel = np.ones((3, 3), np.uint8)
     mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernel, iterations=2)
     mask = cv2.dilate(mask, kernel, iterations=1)
@@ -56,16 +55,20 @@ def main():
         frame = cv2.flip(frame, 1)
 
         # Mask for dark blue cloak
+        
         mask = get_mask_for_dark_blue(frame)
         mask_inv = cv2.bitwise_not(mask)
 
         # Background where cloak is present
+
         cloak_area = cv2.bitwise_and(background, background, mask=mask)
 
         # Current frame where cloak is NOT present
+
         visible_area = cv2.bitwise_and(frame, frame, mask=mask_inv)
 
         # Final output
+
         final_output = cv2.addWeighted(cloak_area, 1, visible_area, 1, 0)
 
         cv2.putText(final_output, "Dark Blue Cloak Mode - Press 'q' to quit",
