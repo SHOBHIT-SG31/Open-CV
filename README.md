@@ -50,3 +50,10 @@ Make sure you have the following installed:
 - Background Capture: Uses median of multiple frames for a clean background.
 - Color Detection: HSV mask for dark blue range [100, 100, 50] → [130, 255, 255].
 - Final Output: Combines cloak area (background) + visible area (current frame).
+
+---
+
+## 📌 Notes
+- Works best in good lighting conditions.
+- Avoid wearing other blue shades in the frame.
+- You can tweak HSV values in get_mask_for_dark_blue() for different cloak colors.
