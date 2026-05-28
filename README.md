@@ -57,3 +57,18 @@ Make sure you have the following installed:
 - Works best in good lighting conditions.
 - Avoid wearing other blue shades in the frame.
 - You can tweak HSV values in get_mask_for_dark_blue() for different cloak colors.
+
+---
+
+## 🎯 Future Improvements
+- Add support for multiple cloak colors.
+- Enhance mask accuracy with advanced segmentation.
+- Save output video automatically.
+
+---
+
+## 👨‍💻 Author
+- Developed with ❤️ using Python + OpenCV.
+Feel free to fork, improve, and share your invisibility cloak experiments!
+
+---
